@@ -4,6 +4,6 @@ import { cryptoApi } from '../services/cryptoApi';
 
 export default configureStore({
     reducer: {
-        [cryptoApi.reducerPath]: crypto.reducer,
+        [cryptoApi.reducerPath]: cryptoApi.reducer,
     },
 });
