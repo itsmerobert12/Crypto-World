@@ -1,5 +1,3 @@
-// Generated using webpack-cli https://github.com/webpack/webpack-cli
-
 const path = require('path');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
@@ -26,9 +24,11 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/i,
+                test: /\.(js|jsx)$/,
+                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
-            },
+                options: { presets: ['@babel/env','@babel/preset-react'] },
+              },
             {
                 test: /\.css$/i,
                 use: [stylesHandler,'css-loader'],
